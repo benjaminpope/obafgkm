@@ -3,14 +3,14 @@ import sys
 import os
 from setuptools import setup
 
-if "publish" in sys.argv[-1]:
-    os.system("python setup.py sdist")
-    os.system("twine upload dist/*")
-    os.system("rm -rf dist/*")
-    sys.exit()
+# if "publish" in sys.argv[-1]:
+#     os.system("python setup.py sdist")
+#     os.system("twine upload dist/*")
+#     os.system("rm -rf dist/*")
+#     sys.exit()
 
 # Load the __version__ variable without importing the package
-exec(open('coco/version.py').read())
+# exec(open('coco/version.py').read())
 
 # Command-line tools
 entry_points = {'console_scripts': [
@@ -18,7 +18,6 @@ entry_points = {'console_scripts': [
 ]}
 
 setup(name='obafgkm',
-      version=__version__,
       description="Convert spectral type to stellar parameters",
       long_description="",
       author='Benjamin Pope',
